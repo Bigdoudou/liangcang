@@ -1,0 +1,133 @@
+
+
+*{
+	padding: 0;
+	margin: 0;
+}
+img{
+	border: none;
+}
+li{
+	list-style: none;
+}
+a{
+	text-decoration: none;	
+}
+.bg-loginBox{
+	width: 652px;
+	height: 315px;
+	background: url(../img/oldMan.jpg) no-repeat;
+	position: fixed;
+	left: 348.5px;
+	top: 53.5px;
+}
+#bg-loginBox{
+	width: 568px;
+	height: 242px;
+	padding: 33px 42px 40px;
+	z-index: 4;
+}
+.main{
+	width: 568px;
+	height: 242px;
+
+	opacity: 0.7;
+}
+.main-top{
+	width: 568px;
+	height: 16px;
+	padding-bottom: 40px;
+	color: white;
+	line-height: 16px;
+	font-size: 16px;
+	letter-spacing: 1px;
+}
+.main-top span{
+	width: 18px;
+	height: 18px;
+	cursor: pointer;
+	float: right;
+	font-size: 20px;
+}
+.main-left{
+	width: 264px;
+	height: 186px;
+	float: left;
+}
+.main-right{
+	width: 264px;
+	height: 57px;
+	float: right;
+}
+.main .main-left-phone ,.main .main-left-code{
+	width: 264px;
+	height: 40px;
+	margin-bottom: 10px;
+}
+.main .main-left-phone input ,.main .main-left-code input{
+	width: 244px;
+	padding: 10px;
+	height: 20px;
+	line-height: 20px;
+	border: none;
+	outline: none;
+	font-size: 14px;
+	color: #FFFFFF;
+	opacity: 0.8;
+}
+.main-left .autoLogin{
+	width: 264px;
+	height: 17px;
+	padding: 2px 0 8px;
+	line-height: 16px;
+	color: #FFFFFF;
+}
+.autoLogin .autoLogin-left{
+	width: 120px;
+	height: 17px;	
+}
+.autoLogin .autoLogin-left label{
+	padding-left: 6px;
+	width: 135px;
+	height: 17px;
+	font-size: 14px;
+	color: white;
+}
+.autoLogin a{
+		font-size: 14px;
+		color: white;
+	position: relative;
+	left: 190px;
+	top: -18px;
+}
+.main-left .btn-login{
+	margin-top: 19px;
+	float: left;
+	width: 156px;
+	height: 40px;
+	line-height: 40px;
+	border: none;
+	background: #25292e;
+	color: #FFFFFF;
+	cursor: pointer;
+	font-size: 16px;
+}
+.main-left>.register{
+	border-bottom: 1px solid #FFFFFF;
+	font-size: 14px;
+	position: relative;
+	left: 50px;
+	top: 25px;
+	color: #FFFFFF;
+}
+.main-right p{
+	width: 100%;
+	padding: 0 0 18px;
+	line-height: 18px;
+	color: #FFFFFF;
+	font-size: 14px;
+	letter-spacing: 1px;
+}
+.main-right a{
+	margin-right: 25px;
+}

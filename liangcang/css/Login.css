@@ -120,15 +120,21 @@ body{
 	margin-top: 9px;
 	margin-bottom: 30px;
 	border-radius: 4px;
-	font-weight: normal;
+	font-weight: bold;
 	font-size: 18px;
 	color: white;
 	line-height: 50px;
+
 }
 .more{
 	width: 300px;
 	height: 21px;
 	margin: 0 auto;
+	color: #000000;
+}
+.more a{
+
+	color: #000000;
 }
 
 
