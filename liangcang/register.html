@@ -17,24 +17,24 @@
 				<div class="phone">
 					<span>手机号</span>
 					<div class="box-phone">
-						<input type="text" placeholder="请输入手机号"/>
+						<input type="text" id="phone1" value="请输入手机号"/>
 					</div>
 				</div>
 				
 				<div class="code">
 					<span>验证码</span>
 					<div class="box-code">
-						<input type="text" placeholder="输入验证码"/>
+						<input type="text" id="code" value="输入验证码"/>
 					</div>
 					<div class="code-R">
-						<div class="codenum"></div>
+						<div class="codenum " id="Txtidcode"></div>
 						<a href="javascript:">看不清，换一张</a>
 					</div>
 				</div>
 				<div class="num">
 					<span class="num-span">创建密码</span>
 					<div class="box-num">
-						<input type="text" placeholder="6－20位字符组成，区分大小写"/>
+						<input type="text" id="num" value="6-20位字符组成，区分大小写"/>
 					</div>
 					<div class="numR">
 						<div class="numR-top">
@@ -50,9 +50,9 @@
 					</div>
 				</div>
 				<div class="numT">
-					<span class="numT-span">密码确认</span>
+					<span  class="numT-span">密码确认</span>
 					<div class="box-numT">
-						<input type="text" placeholder="确认密码"/>
+						<input type="text" id="numture" value="确认密码"/>
 					</div>
 				</div>
 				
@@ -95,3 +95,8 @@
 	</div>
 	</body>
 </html>
+<script type="text/javascript" src="js/jquery-1.12.3.min.js" ></script>
+<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+<script type="text/javascript" src="js/jquery.cookie.js" ></script>
+<script type="text/javascript" src="js/jquery.idcode.js" ></script>
+<script type="text/javascript" src="js/Register.js" ></script>
