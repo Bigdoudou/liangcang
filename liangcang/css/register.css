@@ -140,8 +140,15 @@ span{
 .codenum{
 	width: 64px;
 	height: 28px;
-	background: wheat;
+
 }
+.code-R a{
+	position: absolute;
+	left: 70px;
+	top: 10px;
+}
+
+
 /*num*/
 .num{
 	width: 565px;

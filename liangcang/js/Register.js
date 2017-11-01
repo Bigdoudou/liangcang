@@ -17,6 +17,7 @@ $("#phone1").focus(function(){
 var phoneNum =document.getElementById("phone1")
 var numStr=phoneNum.value;
 	 
+	 
 $("#phone1").blur(function(){
 	
 	if($(this).val()==""){
@@ -27,16 +28,16 @@ $("#phone1").blur(function(){
 })
 	
 //输入验证码 
-$("#code").focus(function(){
+$("#Txtidcode").focus(function(){
 	if ($(this).val()=="输入验证码") {
 		$(this).val("");
 	}
 })
 //失去密码
-var codeNum =document.getElementById("code")
+var codeNum =document.getElementById("Txtidcode")
 var codeStr=codeNum.value;
 	 
-$("#code").blur(function(){
+$("#Txtidcode").blur(function(){
 	
 	if($(this).val()==""){
 		$(this).val("输入验证码")
@@ -53,14 +54,14 @@ $("#num").focus(function(){
 })
 
 var numNum =document.getElementById("num")
-var numStr=numNum.value;
+var numStr1=numNum.value;
 	 
 $("#num").blur(function(){
 	
 	if($(this).val()==""){
 		$(this).val("6-20位字符组成，区分大小写")
-	}else if($(this).val()==numStr){
-		$(this).val(numStr)
+	}else if($(this).val()==numStr1){
+		$(this).val(numStr1)
 	}
 })
 
@@ -83,10 +84,84 @@ $("#numture").blur(function(){
 	}
 })
 	
+
+//验证码 text  
+
+$.idcode.setCode();
+/*
+$("#gxCode").click(function(){
+	$.idcode.setCode();
+})
+
+var IsBy=$.idcode.validateCode()
+console.log( "code1"+IsBy  )
+*/
+//验证码
+//	var codeNum1 =document.getElementById("idcode")
+//	var codeNumstr =$.idcode.setCode()
+
+//$(".numR-top div").css({"background":"white"})
+var len=0;
+$("#num").keyup(function(){
+	$(".numR-top div").css("background","#F5F5F5")
+	len=$("#num").val().length;
+	console.log("len"+len)
+	if(len <=6 ){
+		$(".numR-top div").eq(0).css("background","red")
+	}else if (len>6&&len<=12){
+		$(".numR-top div").eq(0).css("background","red")
+		$(".numR-top div").eq(1).css("background","yellow")
+	}else if (len>12&&len<=20||len>20){
+		$(".numR-top div").eq(0).css("background","red")
+		$(".numR-top div").eq(1).css("background","yellow")
+		$(".numR-top div").eq(2).css("background","#00d5e8")
+	}
+})
 	
 //点击注册  函数 
 	$(".loginbox").click(function(){
+		
+		 numStr=$("#phone1").val();
+		 numStr1=$("#num").val();
+		 numtureStr=$("#numture").val();
+
+		 codeStr =$("#Txtidcode").val()
+
+//调用返回值，返回值结果为true或者false
+     
+	$.idcode.setCode();
+
+$("#gxCode").click(function(){
+	$.idcode.setCode();
+})
+
+var IsBy=$.idcode.validateCode()
+console.log( "1code1"+IsBy  )
+		 
+		 
+		
+		 console.log("codeStr"+codeStr)
+		console.log(numStr1)
 		console.log("点击了")
+		
+		
+		var reg =/^1\d{10}$/;
+		var passWord = /\w{5,19}/;
+		
+		if (!reg.test(numStr)) {	
+			alert("手机号码格式不正确")
+		}else if (!passWord.test(numStr1)) {
+			alert("密码格式不正确")
+		}else if (!passWord.test(numtureStr)) {
+			alert("密码格式不正确")
+		}else if (numStr1!=numtureStr) {
+			alert("两次密码不正确")
+		}else if (!IsBy){
+			alert("验证码不正确")
+		}
+		else{
+			alert("注册成功")
+		}
 		
 	})
 //结尾	

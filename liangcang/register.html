@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
+		 <link rel="stylesheet" href="css/jquery.idcode.css" />
 	</head>
 	<body>
 		<link rel="stylesheet" href="css/register.css" />
@@ -20,17 +21,25 @@
 						<input type="text" id="phone1" value="请输入手机号"/>
 					</div>
 				</div>
+				<!--验证码-->
 				
-				<div class="code">
+				
+				<div class="code txtVerification">
 					<span>验证码</span>
+					
 					<div class="box-code">
-						<input type="text" id="code" value="输入验证码"/>
+						<input type="text" id ="Txtidcode" class ="txtVerification" value="输入验证码"/>
 					</div>
+					
+					<!--验证码-->
 					<div class="code-R">
-						<div class="codenum " id="Txtidcode"></div>
-						<a href="javascript:">看不清，换一张</a>
+						<span class="codenum " id="idcode"></span>
+						<a href="javascript:" id="gxCode" >看不清，换一张</a>
 					</div>
 				</div>
+				
+				
+				
 				<div class="num">
 					<span class="num-span">创建密码</span>
 					<div class="box-num">
