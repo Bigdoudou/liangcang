@@ -6,6 +6,16 @@ $(function(){
 //		if( $(this).val()==arr[i] ){
 //			$(this).val("");
 //		}
+//小图标 效果
+$(".join ul li").mouseover(function(){
+		$(this).css({"opacity":0.5})
+	})
+	
+	$(".join ul li").mouseout(function(){
+		$(this).css({"opacity":1})
+	})
+
+
 
 //请输入手机号
 $("#phone1").focus(function(){
@@ -88,6 +98,20 @@ $("#numture").blur(function(){
 //验证码 text  
 
 $.idcode.setCode();
+$(function(){
+						
+	$.idcode.setCode();
+
+	$("#Txtidcode").change(function(){
+		
+		var isBy = $.idcode.validateCode()
+		console.log(isBy);
+		if(!isBy){
+			alert("验证码不正确")
+		} 
+	})
+})
+
 /*
 $("#gxCode").click(function(){
 	$.idcode.setCode();
@@ -129,17 +153,6 @@ $("#num").keyup(function(){
 
 //调用返回值，返回值结果为true或者false
      
-	$.idcode.setCode();
-
-$("#gxCode").click(function(){
-	$.idcode.setCode();
-})
-
-var IsBy=$.idcode.validateCode()
-console.log( "1code1"+IsBy  )
-		 
-		 
-		
 		 console.log("codeStr"+codeStr)
 		console.log(numStr1)
 		console.log("点击了")
@@ -156,13 +169,29 @@ console.log( "1code1"+IsBy  )
 			alert("密码格式不正确")
 		}else if (numStr1!=numtureStr) {
 			alert("两次密码不正确")
-		}else if (!IsBy){
-			alert("验证码不正确")
-		}
-		else{
+		}else{
 			alert("注册成功")
 		}
 		
+		
+		
+			var url ="http://h6.duchengjiu.top/shop/api_user.php";
+	var data ={
+		status:"register",
+		username:numStr,
+		password:numStr1
+	}
+	
+	console.log(data)
+	$.post(url,data,function(obj){
+		console.log(obj)
+		if (obj.code==0) {
+			alert("注册成功")
+		}else if (obj.code==1001) {
+			alert("用户名存在")
+		}	
+	})
+})
 	})
 //结尾	
-})
+//})

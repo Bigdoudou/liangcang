@@ -13,6 +13,14 @@ $(document).ready(function() {
 //		
 //		// 再发  ajax 向服务器发送登陆请求
 //	}
+	$(".join ul li").mouseover(function(){
+		$(this).css({"opacity":0.5})
+	})
+	
+	$(".join ul li").mouseout(function(){
+		$(this).css({"opacity":1})
+	})
+
 
 	var u = $.cookie("u");
 	var p = $.cookie("p");
@@ -76,7 +84,7 @@ $(".loginbox").click(function(){
 	
 	
 	//思路1;判断号码3-20位字母数字下滑线）2判断密码最小长度为6位,最长20）3判断自动登录
-	var userPhone =/^[0-9a-zA-Z_]{2,19}$/ ;
+	var userPhone =/^[0-9|a-z|A-Z_]{2,19}$/ ;
 	var strP =$("#box-phone").val();
 	
 	var passWord = /\w{5,19}/;
@@ -106,18 +114,34 @@ $(".loginbox").click(function(){
 		
 	}
 	
+	/*
 	var url ="http://h6.duchengjiu.top/shop/api_user.php";
 	var data ={
 		status:"Login",
-		username:"strU",
-		password:"strN"
-	};
+		username:strP,
+		password:strN
+	}
+	*/
+	
+			var url ="http://h6.duchengjiu.top/shop/api_user.php";
+	var data ={
+		status:"Login",
+		username:$("#username").val(),
+		password:$("#password").val()
+	}
+	
+	
+	
+	
+	console.log(data)
 	$.post(url,data,function(obj){
-		console.log(obj.code)
+console.log(obj.code)
 		if (obj.code==0) {
 			alert("注册成功")
-		}else if (obj.code==1001) {
-			alert("用户名存在")
+		}else if (obj.code==1000) {
+			alert("用户名错误,格式不正确，")
+		}else if (obj.code==2001) {
+			alert("资源已存在")
 		}
 		
 	})
