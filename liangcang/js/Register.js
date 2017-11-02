@@ -98,6 +98,9 @@ $("#numture").blur(function(){
 //验证码 text  
 
 $.idcode.setCode();
+$("#gxCode").click(function(){
+	$.idcode.setCode();
+})
 $(function(){
 						
 	$.idcode.setCode();
