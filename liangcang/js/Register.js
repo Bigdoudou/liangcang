@@ -98,6 +98,7 @@ $("#numture").blur(function(){
 //验证码 text  
 
 $.idcode.setCode();
+//修改位置 11-02
 $("#gxCode").click(function(){
 	$.idcode.setCode();
 })
